@@ -56,6 +56,5 @@ def sort_names(names: np.ndarray, scores: np.ndarray) -> list[str]:
     """
     Return a list of names sorted by descending score.
     """
-    idx_sorted = np.argsort(scores)[::-1]  # indices sorted high→low
-    return names[idx_sorted].tolist()
-print(sort_names(names, scores))
+    idx_sorted = np.argsort(scores)[::-1]       # indices in descending order
+    return [names[i] for i in idx_sorted]       # use Python list indexing
